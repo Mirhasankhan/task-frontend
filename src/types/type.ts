@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export type TTask = {
   description: string;
   clientName: string;
@@ -12,3 +14,10 @@ export type TAttachment = {
   filename: string;
   path: string;
 };
+
+export interface CustomCSSProperties extends CSSProperties {
+  WebkitScrollbarWidth?: string;
+  WebkitScrollbarTrack?: string;
+  WebkitScrollbarThumb?: string;
+  WebkitScrollbarThumbHover?: string;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./components/Card";
+import { CustomCSSProperties } from "./types/type";
 
 function App() {
   const [tasks, setTask] = useState([]);
@@ -20,17 +21,19 @@ function App() {
   // const underReview = tasks?.filter((task) => task.status == "Under Review");
   // const completed = tasks?.filter((task) => task.status == "Completed");
 
+  const style: CustomCSSProperties = {
+    scrollbarWidth: "thin",
+    scrollbarColor: "#3b82f6 #f1f1f1",
+    WebkitScrollbarWidth: "8px",
+    WebkitScrollbarTrack: "#f1f1f1",
+    WebkitScrollbarThumb: "#3b82f6",
+    WebkitScrollbarThumbHover: "#2563eb",
+  };
+
   return (
     <div className="grid grid-cols-4 gap-3 m-8">
       <div
-        style={{
-          scrollbarWidth: "thin",
-          scrollbarColor: "#3b82f6 #f1f1f1",
-          WebkitScrollbarWidth: "8px",
-          WebkitScrollbarTrack: "#f1f1f1",
-          WebkitScrollbarThumb: "#3b82f6",
-          WebkitScrollbarThumbHover: "#2563eb",
-        }}
+        style={style}
         className="bg-gray-200 p-1 h-screen overflow-auto"
         key={status}
       >

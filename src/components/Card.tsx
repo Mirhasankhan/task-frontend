@@ -2,23 +2,21 @@ import client from "../assets/client.png";
 import { FaLayerGroup } from "react-icons/fa";
 import { PiNotepadLight } from "react-icons/pi";
 import TaskModal from "./Modal";
-import { TTask } from "../types/type";
+import { CustomCSSProperties } from "../types/type";
 
-const Card = (task: TTask) => {
+const Card = (task: any) => {
   const { description, clientName, _id, attachments } = task.task;
+  const style: CustomCSSProperties = {
+    scrollbarWidth: "thin",
+    scrollbarColor: "#3b82f6 #f1f1f1",
+    WebkitScrollbarWidth: "8px",
+    WebkitScrollbarTrack: "#f1f1f1",
+    WebkitScrollbarThumb: "#3b82f6",
+    WebkitScrollbarThumbHover: "#2563eb",
+  };
 
   return (
-    <div
-      style={{
-        scrollbarWidth: "thin",
-        scrollbarColor: "#3b82f6 #f1f1f1",
-        WebkitScrollbarWidth: "8px",
-        WebkitScrollbarTrack: "#f1f1f1",
-        WebkitScrollbarThumb: "#3b82f6",
-        WebkitScrollbarThumbHover: "#2563eb",
-      }}
-      className="bg-gray-200 p-1"
-    >
+    <div style={style} className="bg-gray-200 p-1">
       <div>
         <div className="bg-white rounded-md p-2 my-2">
           <div className="flex justify-between items-center">

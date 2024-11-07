@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Button, Modal } from "antd";
 import { RiAttachment2 } from "react-icons/ri";
 import UploadFile from "./UploadFile";
+import { TAttachment, TTask } from "../types/type";
 
-const TaskModal = (id) => {
-  const [task, setTask] = useState([]);
+const TaskModal = (id: any) => {
+  const [task, setTask] = useState<TTask[]>([]);
   console.log(task);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -45,7 +46,7 @@ const TaskModal = (id) => {
           {task?.map((t) => (
             <div>
               <div className="mt-6">
-                {t.attachments.map((file, index) => (
+                {t.attachments.map((file: TAttachment, index: number) => (
                   <div key={index} className="flex gap-1 my-2">
                     <p>{index + 1}.</p>
                     {file.mimetype.startsWith("image/") ? (

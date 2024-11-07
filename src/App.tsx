@@ -13,7 +13,9 @@ function App() {
   const incomplete = tasks?.filter(
     (task: { status: string }) => task.status == "Incomplete"
   );
-  const toDo = tasks?.filter((task) => task.status == "To Do");
+  const toDo = tasks?.filter(
+    (task: { status: string }) => task.status == "To Do"
+  );
   // const doing = tasks?.filter((task) => task.status == "Doing");
   // const underReview = tasks?.filter((task) => task.status == "Under Review");
   // const completed = tasks?.filter((task) => task.status == "Completed");
@@ -39,7 +41,7 @@ function App() {
           </div>
           <h1 className="bg-gray-300 px-3 rounded-md">{incomplete?.length}</h1>
         </div>
-        {toDo?.map((ins) => (
+        {toDo?.map((ins: { _id: string }) => (
           <div key={ins._id}>
             <Card task={ins}></Card>
           </div>

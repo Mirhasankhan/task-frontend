@@ -2,8 +2,9 @@ import client from "../assets/client.png";
 import { FaLayerGroup } from "react-icons/fa";
 import { PiNotepadLight } from "react-icons/pi";
 import TaskModal from "./Modal";
+import { TTask } from "../types/type";
 
-const Card = (task) => {
+const Card = (task: TTask) => {
   const { description, clientName, _id, attachments } = task.task;
 
   return (
